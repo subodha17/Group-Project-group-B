@@ -131,6 +131,36 @@ class MyFrame extends JFrame {
                 outputArea.setText("");
             }
         });
+
+
+        // Create submit button
+        JButton submitButton = new JButton("Submit");
+        submitButton.setFont(new Font("Arial", Font.PLAIN, 15));
+        submitButton.setSize(100, 20);
+        submitButton.setLocation(150, 470);
+        getContentPane().add(submitButton);
+
+        // Create reset button
+        JButton resetButton = new JButton("Reset");
+        resetButton.setFont(new Font("Arial", Font.PLAIN, 15));
+        resetButton.setSize(100, 20);
+        resetButton.setLocation(270, 470);
+        getContentPane().add(resetButton);
+
+        // Create text area for output
+        JTextArea outputArea = new JTextArea();
+        outputArea.setFont(new Font("Arial", Font.PLAIN, 15));
+        outputArea.setSize(350, 430);
+        outputArea.setLocation(550, 100);
+        outputArea.setEditable(false);
+        getContentPane().add(outputArea);
+
+        // Create label for displaying sucess or error messages
+        JLabel messageLabel = new JLabel("");
+        messageLabel.setFont(new Font("Arial", Font.PLAIN, 20));
+        messageLabel.setSize(400, 30);
+        messageLabel.setLocation(100, 510);
+        add(messageLabel);
         
 
 
