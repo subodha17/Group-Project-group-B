@@ -54,5 +54,26 @@ class MyFrame extends JFrame {
         mobileNoField.setLocation(200, 150);
         getContentPane().add(mobileNoField);
 
+        // Create action listener for reset button
+        resetButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Reset all fields to their default values
+                nameField.setText("");
+                mobileNoField.setText("");
+                gender.clearSelection();
+                male.setSelected(true);
+                dayComboBox.setSelectedIndex(0);
+                monthComboBox.setSelectedIndex(0);
+                yearComboBox.setSelectedIndex(0);
+                addressArea.setText("");
+                termsCheckBox.setSelected(false);
+                messageLabel.setText("");
+                outputArea.setText("");
+            }
+        });
+    }
+}
+
     }
 }
