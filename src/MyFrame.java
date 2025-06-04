@@ -82,6 +82,35 @@ class MyFrame extends JFrame {
         mobileNoField.setLocation(200, 150);
         getContentPane().add(mobileNoField);
 
+        // Add action listeners for submit button
+        submitButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Check if the terms and condition checkbox is selected
+                if (termsCheckBox.isSelected())
+                {
+                    messageLabel.setText( "Registration Successfully..");
+                    String name = nameField.getText();
+                    String mobile = mobileNoField.getText();
+                    String gender = null;
+                    if (male.isSelected())
+                        gender = "Male";
+                    else
+                        gender = "Female";
+                    String address = addressArea.getText();
+                    String dob = dayComboBox.getSelectedItem() + "/" + monthComboBox.getSelectedItem() + "/" + yearComboBox.getSelectedItem();
+
+                    // Display the output in the output area
+                    outputArea.setText("Name: "+name+"\nMobile: "+mobile+"\nGender: "+gender+"\nDOB: "+dob+"\nAddress: "+address);
+                }
+                // if the terms and condition checkbox is not selected
+                else
+                {
+                    messageLabel.setText("Please accept the terms & conditions..");
+                }
+            }
+        });
+
         // Create action listener for reset button
         resetButton.addActionListener(new ActionListener() {
             @Override
