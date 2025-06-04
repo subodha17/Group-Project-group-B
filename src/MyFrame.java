@@ -26,11 +26,33 @@ class MyFrame extends JFrame {
         titleLabel.setLocation(FRAME_WIDTH / 2 - 100, 30);
         getContentPane().add(titleLabel);
 
+        // Create label for name
+        JLabel nameLabel = new JLabel("Name");
+        nameLabel.setFont(new Font("Arial", Font.PLAIN, 20));
+        nameLabel.setSize(100, 30);
+        nameLabel.setLocation(100, 100);
+        getContentPane().add(nameLabel);
 
+        // Create text field for name input
+        JTextField nameField = new JTextField();
+        nameField.setFont(new Font("Arial", Font.PLAIN, 15));
+        nameField.setSize(270, 25);
+        nameField.setLocation(200, 100);
+        getContentPane().add(nameField);
 
+        // Create label for mobile number
+        JLabel mobileNoLabel = new JLabel("Mobile");
+        mobileNoLabel.setFont(new Font("Arial", Font.PLAIN, 20));
+        mobileNoLabel.setSize(100, 30);
+        mobileNoLabel.setLocation(100, 150);
+        getContentPane().add(mobileNoLabel);
 
-
-
+        // Create text field for mobile number input
+        JTextField mobileNoField = new JTextField();
+        mobileNoField.setFont(new Font("Arial", Font.PLAIN, 15));
+        mobileNoField.setSize(220, 25);
+        mobileNoField.setLocation(200, 150);
+        getContentPane().add(mobileNoField);
 
     }
 }
