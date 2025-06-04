@@ -72,8 +72,10 @@ class MyFrame extends JFrame {
                 outputArea.setText("");
             }
         });
-    }
-}
+
+
+
+
 
     }
 }
