@@ -111,6 +111,8 @@ class MyFrame extends JFrame {
             }
         });
 
+      
+
         // Create action listener for reset button
         resetButton.addActionListener(new ActionListener() {
             @Override
