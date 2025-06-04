@@ -161,8 +161,29 @@ class MyFrame extends JFrame {
         messageLabel.setSize(400, 30);
         messageLabel.setLocation(100, 510);
         add(messageLabel);
-        
 
+
+
+        // Create label for address
+        JLabel addressLabel = new JLabel("Address");
+        addressLabel.setFont(new Font("Arial", Font.PLAIN, 20));
+        addressLabel.setSize(100, 30);
+        addressLabel.setLocation(100, 300);
+        getContentPane().add(addressLabel);
+
+        // Create text area for address input
+        JTextArea addressArea = new JTextArea();
+        addressArea.setFont(new Font("Arial", Font.PLAIN, 15));
+        addressArea.setSize(270, 100);
+        addressArea.setLocation(200, 300);
+        getContentPane().add(addressArea);
+
+        // Create checkbox for terms and conditions
+        JCheckBox termsCheckBox = new JCheckBox("Accept Terms and Conditions.");
+        termsCheckBox.setFont(new Font("Arial", Font.PLAIN, 15));
+        termsCheckBox.setSize(250, 30);
+        termsCheckBox.setLocation(150, 420);
+        getContentPane().add(termsCheckBox);
 
 
 
