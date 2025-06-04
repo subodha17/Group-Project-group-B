@@ -47,6 +47,34 @@ class MyFrame extends JFrame {
         mobileNoLabel.setLocation(100, 150);
         getContentPane().add(mobileNoLabel);
 
+        // Create label for gender
+        JLabel genderLabel = new JLabel("Gender");
+        genderLabel.setFont(new Font("Arial", Font.PLAIN, 20));
+        genderLabel.setSize(100, 30);
+        genderLabel.setLocation(100, 200);
+        getContentPane().add(genderLabel);
+
+        // Create radio button for male
+        JRadioButton male = new JRadioButton("Male");
+        male.setFont(new Font("Arial", Font.PLAIN, 15));
+        male.setSelected(true);
+        male.setSize(100,30);
+        male.setLocation(200, 200);
+        getContentPane().add(male);
+
+        // Create radio button for female
+        JRadioButton female = new JRadioButton("Female");
+        female.setFont(new Font("Arial", Font.PLAIN, 15));
+        female.setSelected(false);
+        female.setSize(100,30);
+        female.setLocation(300, 200);
+        getContentPane().add(female);
+
+        // Add radio buttons to a button group
+        ButtonGroup gender = new ButtonGroup();
+        gender.add(male);
+        gender.add(female);
+
         // Create text field for mobile number input
         JTextField mobileNoField = new JTextField();
         mobileNoField.setFont(new Font("Arial", Font.PLAIN, 15));
@@ -72,6 +100,7 @@ class MyFrame extends JFrame {
                 outputArea.setText("");
             }
         });
+        
 
 
 
