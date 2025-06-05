@@ -82,6 +82,49 @@ class MyFrame extends JFrame {
         mobileNoField.setLocation(200, 150);
         getContentPane().add(mobileNoField);
 
+        // Create label for date of birth
+        JLabel dobLabel = new JLabel("DOB");
+        dobLabel.setFont(new Font("Arial", Font.PLAIN, 20));
+        dobLabel.setSize(100, 30);
+        dobLabel.setLocation(100, 250);
+        getContentPane().add(dobLabel);
+
+        // Create a string to hold the days
+        String [] days = new String[31];
+        for (int i = 1; i <= 31; i++) {
+            days[i - 1] = String.valueOf(i);
+        }
+
+        // Create combo box for days
+        JComboBox<String> dayComboBox = new JComboBox<>(days);
+        dayComboBox.setFont(new Font("Arial", Font.PLAIN, 15));
+        dayComboBox.setSize(50, 20);
+        dayComboBox.setLocation(200, 255);
+        getContentPane().add(dayComboBox);
+
+        // Create string to hold the months
+        String [] months = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
+
+        // Create combo box for months
+        JComboBox<String> monthComboBox = new JComboBox<>(months);
+        monthComboBox.setFont(new Font("Arial", Font.PLAIN, 15));
+        monthComboBox.setSize(60, 20);
+        monthComboBox.setLocation(250, 255);
+        getContentPane().add(monthComboBox);
+
+        // Create string to hold the years
+        String [] years = new String[25];
+        for (int i = 0; i < 25; i++) {
+            years[i] = String.valueOf(1995+i);
+        }
+
+        // Create combo box for years
+        JComboBox<String> yearComboBox = new JComboBox<>(years);
+        yearComboBox.setFont(new Font("Arial", Font.PLAIN, 15));
+        yearComboBox.setSize(80, 20);
+        yearComboBox.setLocation(320, 255);
+        getContentPane().add(yearComboBox);
+
         // Add action listeners for submit button
         submitButton.addActionListener(new ActionListener() {
             @Override
