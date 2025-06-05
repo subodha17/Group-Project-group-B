@@ -47,6 +47,13 @@ class MyFrame extends JFrame {
         mobileNoLabel.setLocation(100, 150);
         getContentPane().add(mobileNoLabel);
 
+        // Create text field for mobile number input
+        JTextField mobileNoField = new JTextField();
+        mobileNoField.setFont(new Font("Arial", Font.PLAIN, 15));
+        mobileNoField.setSize(220, 25);
+        mobileNoField.setLocation(200, 150);
+        getContentPane().add(mobileNoField);
+
         // Create label for gender
         JLabel genderLabel = new JLabel("Gender");
         genderLabel.setFont(new Font("Arial", Font.PLAIN, 20));
@@ -74,13 +81,6 @@ class MyFrame extends JFrame {
         ButtonGroup gender = new ButtonGroup();
         gender.add(male);
         gender.add(female);
-
-        // Create text field for mobile number input
-        JTextField mobileNoField = new JTextField();
-        mobileNoField.setFont(new Font("Arial", Font.PLAIN, 15));
-        mobileNoField.setSize(220, 25);
-        mobileNoField.setLocation(200, 150);
-        getContentPane().add(mobileNoField);
 
         // Create label for date of birth
         JLabel dobLabel = new JLabel("DOB");
@@ -125,56 +125,26 @@ class MyFrame extends JFrame {
         yearComboBox.setLocation(320, 255);
         getContentPane().add(yearComboBox);
 
-        // Add action listeners for submit button
-        submitButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // Check if the terms and condition checkbox is selected
-                if (termsCheckBox.isSelected())
-                {
-                    messageLabel.setText( "Registration Successfully..");
-                    String name = nameField.getText();
-                    String mobile = mobileNoField.getText();
-                    String gender = null;
-                    if (male.isSelected())
-                        gender = "Male";
-                    else
-                        gender = "Female";
-                    String address = addressArea.getText();
-                    String dob = dayComboBox.getSelectedItem() + "/" + monthComboBox.getSelectedItem() + "/" + yearComboBox.getSelectedItem();
+        // Create label for address
+        JLabel addressLabel = new JLabel("Address");
+        addressLabel.setFont(new Font("Arial", Font.PLAIN, 20));
+        addressLabel.setSize(100, 30);
+        addressLabel.setLocation(100, 300);
+        getContentPane().add(addressLabel);
 
-                    // Display the output in the output area
-                    outputArea.setText("Name: "+name+"\nMobile: "+mobile+"\nGender: "+gender+"\nDOB: "+dob+"\nAddress: "+address);
-                }
-                // if the terms and condition checkbox is not selected
-                else
-                {
-                    messageLabel.setText("Please accept the terms & conditions..");
-                }
-            }
-        });
+        // Create text area for address input
+        JTextArea addressArea = new JTextArea();
+        addressArea.setFont(new Font("Arial", Font.PLAIN, 15));
+        addressArea.setSize(270, 100);
+        addressArea.setLocation(200, 300);
+        getContentPane().add(addressArea);
 
-      
-
-        // Create action listener for reset button
-        resetButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // Reset all fields to their default values
-                nameField.setText("");
-                mobileNoField.setText("");
-                gender.clearSelection();
-                male.setSelected(true);
-                dayComboBox.setSelectedIndex(0);
-                monthComboBox.setSelectedIndex(0);
-                yearComboBox.setSelectedIndex(0);
-                addressArea.setText("");
-                termsCheckBox.setSelected(false);
-                messageLabel.setText("");
-                outputArea.setText("");
-            }
-        });
-
+        // Create checkbox for terms and conditions
+        JCheckBox termsCheckBox = new JCheckBox("Accept Terms and Conditions.");
+        termsCheckBox.setFont(new Font("Arial", Font.PLAIN, 15));
+        termsCheckBox.setSize(250, 30);
+        termsCheckBox.setLocation(150, 420);
+        getContentPane().add(termsCheckBox);
 
         // Create submit button
         JButton submitButton = new JButton("Submit");
@@ -205,31 +175,52 @@ class MyFrame extends JFrame {
         messageLabel.setLocation(100, 510);
         add(messageLabel);
 
+        // Add action listeners for submit button
+        submitButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Check if the terms and condition checkbox is selected
+                if (termsCheckBox.isSelected())
+                {
+                    messageLabel.setText( "Registration Successfully..");
+                    String name = nameField.getText();
+                    String mobile = mobileNoField.getText();
+                    String gender = null;
+                    if (male.isSelected())
+                        gender = "Male";
+                    else
+                        gender = "Female";
+                    String address = addressArea.getText();
+                    String dob = dayComboBox.getSelectedItem() + "/" + monthComboBox.getSelectedItem() + "/" + yearComboBox.getSelectedItem();
 
+                    // Display the output in the output area
+                    outputArea.setText("Name: "+name+"\nMobile: "+mobile+"\nGender: "+gender+"\nDOB: "+dob+"\nAddress: "+address);
+                }
+                // if the terms and condition checkbox is not selected
+                else
+                {
+                    messageLabel.setText("Please accept the terms & conditions..");
+                }
+            }
+        });
 
-        // Create label for address
-        JLabel addressLabel = new JLabel("Address");
-        addressLabel.setFont(new Font("Arial", Font.PLAIN, 20));
-        addressLabel.setSize(100, 30);
-        addressLabel.setLocation(100, 300);
-        getContentPane().add(addressLabel);
-
-        // Create text area for address input
-        JTextArea addressArea = new JTextArea();
-        addressArea.setFont(new Font("Arial", Font.PLAIN, 15));
-        addressArea.setSize(270, 100);
-        addressArea.setLocation(200, 300);
-        getContentPane().add(addressArea);
-
-        // Create checkbox for terms and conditions
-        JCheckBox termsCheckBox = new JCheckBox("Accept Terms and Conditions.");
-        termsCheckBox.setFont(new Font("Arial", Font.PLAIN, 15));
-        termsCheckBox.setSize(250, 30);
-        termsCheckBox.setLocation(150, 420);
-        getContentPane().add(termsCheckBox);
-
-
-
-
+        // Create action listener for reset button
+        resetButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Reset all fields to their default values
+                nameField.setText("");
+                mobileNoField.setText("");
+                gender.clearSelection();
+                male.setSelected(true);
+                dayComboBox.setSelectedIndex(0);
+                monthComboBox.setSelectedIndex(0);
+                yearComboBox.setSelectedIndex(0);
+                addressArea.setText("");
+                termsCheckBox.setSelected(false);
+                messageLabel.setText("");
+                outputArea.setText("");
+            }
+        });
     }
 }
